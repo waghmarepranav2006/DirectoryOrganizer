@@ -6,12 +6,8 @@ A simple shell script that automatically organizes files in a specified director
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation](#installation)
+- [Prerequisites](#prerequisites)
 - [Usage](#usage)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
@@ -24,19 +20,18 @@ Managing cluttered directories can be challenging. The Directory Organizer scrip
 - **Logging:** Maintains a log file (`organizer.log`) that records all operations with timestamps.
 - **Flexible Usage:** Run the script with or without specifying a target directory (defaults to the current directory).
 
-## Installation
-
-### Prerequisites
+## Prerequisites
 
 - **Operating System:** Windows with WSL (Ubuntu) or any Unix-like environment.
 - **Tools:**
   - Bash shell
   - `dos2unix` (optional, for converting Windows line endings)
 
-### Steps
+## Usage
 
-1. **Clone the Repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/directory-organizer.git
-   cd directory-organizer
+1. **Convert Line Endings (if necessary):**
+   `dos2unix directory_organizer.sh`
+2. **Make the Script Executable:**
+   `chmod +x directory_organizer.sh`
+3. **Run the Script:**
+   `./directory_organizer.sh`
