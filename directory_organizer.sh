@@ -16,15 +16,23 @@ log_operation() {
 
 echo "Organizing files in $TARGET_DIR..."
 
-# Loop over each file in the directory (not directories)
+# Get the current script's basename dynamically
+script_name="$(basename "$0")"
+
+# Loop over each file in the directory (ignore directories)
 for file in "$TARGET_DIR"/*; do
   if [ -f "$file" ]; then
+    # Skip the script file itself
+    if [ "$(basename "$file")" = "$script_name" ]; then
+      continue
+    fi
+
     # Get the file extension (convert to lowercase)
     extension="${file##*.}"
     extension=$(echo "$extension" | tr '[:upper:]' '[:lower:]')
 
     # Determine the destination folder based on extension
-    dest_folder="$TARGET_DIR/$extension-files"
+    dest_folder="$TARGET_DIR/${extension}-files"
     
     # Create destination folder if it doesn't exist
     if [ ! -d "$dest_folder" ]; then
